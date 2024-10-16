@@ -4,8 +4,6 @@
 		"name": "Book Store API",
 		"description": "A collection of requests for the Comic Book Store API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30936820",
-		"_collection_link": "https://www.postman.com/api-team-1972/workspace/school-management-api/collection/30936820-9f048f06-6587-4b62-9d43-9a7a26ffc8ee?action=share&source=collection_link&creator=30936820"
 	},
 	"item": [
 		{
@@ -194,7 +192,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://localhost:3000",
+			"value": "http://localhost:8080",
 			"type": "string"
 		},
 		{
