@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "9f048f06-6587-4b62-9d43-9a7a26ffc8ee",
+		"name": "Book Store API",
+		"description": "A collection of requests for the Comic Book Store API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30936820",
+		"_collection_link": "https://www.postman.com/api-team-1972/workspace/school-management-api/collection/30936820-9f048f06-6587-4b62-9d43-9a7a26ffc8ee?action=share&source=collection_link&creator=30936820"
+	},
+	"item": [
+		{
+			"name": "Create Comic Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookName\": \"Spider-Man: No Way Home\",\n    \"authorName\": \"Stan Lee\",\n    \"yearOfPublication\": 2022,\n    \"price\": 19.99,\n    \"discount\": 0,\n    \"numberOfPages\": 120,\n    \"condition\": \"new\",\n    \"description\": \"The latest Spider-Man adventure\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/comic-books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"comic-books"
+					]
+				},
+				"description": "Create a new comic book in the inventory"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Batman Comic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookName\": \"Batman: The Dark Knight Returns\",\n    \"authorName\": \"Frank Miller\",\n    \"yearOfPublication\": 1986,\n    \"price\": 29.99,\n    \"discount\": 5,\n    \"numberOfPages\": 200,\n    \"condition\": \"used\",\n    \"description\": \"A groundbreaking Batman graphic novel\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/comic-books",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"comic-books"
+					]
+				},
+				"description": "Create a Batman comic book in the inventory"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Comic Book",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"price\": 24.99,\n    \"discount\": 10\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/comic-books/{{comicBookId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"comic-books",
+						"{{comicBookId}}"
+					]
+				},
+				"description": "Update an existing comic book in the inventory"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Comic Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/comic-books/{{comicBookId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"comic-books",
+						"{{comicBookId}}"
+					]
+				},
+				"description": "Delete a comic book from the inventory"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comic Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/comic-books?page=1&limit=10&sort={\"price\":1}&authorName=Stan Lee",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"comic-books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "{\"price\":1}"
+						},
+						{
+							"key": "authorName",
+							"value": "Stan Lee"
+						}
+					]
+				},
+				"description": "Get a list of comic books with pagination, sorting, and filtering"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comic Book Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/comic-books/{{comicBookId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"comic-books",
+						"{{comicBookId}}"
+					]
+				},
+				"description": "Get details of a specific comic book"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "comicBookId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
